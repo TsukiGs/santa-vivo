@@ -558,3 +558,7 @@ client.on("message", async (message) => {
 
 
 client.login(process.env.token); 
+
+setInterval(() => {
+  console.log("Manteniendo vivo el proceso...");
+}, 1000 * 60 * 5);
