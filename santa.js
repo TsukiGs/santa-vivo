@@ -466,6 +466,20 @@ client.on("message", (message) => {
 
         }
 
+        if (message.content.startsWith("s!h 8ball")) {
+          const embed = new Discord.MessageEmbed()
+                        .setDescription("Has una pregunta de si/no.")
+                        .setColor(0x00FFFF)
+                        .addField("Uso", "`s!8ball <texto>`")
+                        .addField("Ejemplo", "• s!8ball ¿soy un gato?")
+                        .addField("Alias", "8ball")
+                        .setAuthor("Diversion: 8ball", client.user.avatarURL())
+                        .setFooter("<> = Obligatorio | [] = Opcional. | No incluyas estos símbolos cuando ejecutes el comando.")
+
+message.channel.send(embed);
+
+        }
+
 //////////// OTROS ////////////
         if (message.content.startsWith("s!invite")) {
           const embed = new Discord.MessageEmbed()
