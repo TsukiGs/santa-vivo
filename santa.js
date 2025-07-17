@@ -1,3 +1,4 @@
+
 require('dotenv').config();
 
 const express = require('express');
@@ -360,7 +361,7 @@ client.on("message", (message) => {
             const embed = new Discord.MessageEmbed()
                           .setDescription("Prefijo:  s!")
                           .setColor(0x00FFFF)
-                          .addField("Comandos de diversion", "`say` `8ball`")
+                          .addField("Comandos de diversion", "`say`)
                           .addField("Comandos de reaccion", "`hi` `happy` `cry` `hug` `pat`")
                           .addField("Comandos de moderacion", "`clear` `ban` `kick` `redes`")
                           .addField("Otros", "`avatar` `userinfo` `invite` `help`")
