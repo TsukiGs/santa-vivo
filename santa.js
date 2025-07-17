@@ -63,18 +63,21 @@ if(command === "hi"){
   message.channel.send(embed)
 }
 
-if(command === "8ball"){
+  if(command === "cry"){
   const pregunta = args.join(" ")
-  const respuestas = ["si", "no", "tal ves", "quizas", "en absoluto", "probablemente", "nose", "probablemente... NO", "negativo", "callate", "ni me lo menciones", "definitivamente", "Preguntale a Santa"]
+  const respuestas = ["https://c.tenor.com/JnfN36glomcAAAAC/anime-triste.gif", "https://i.pinimg.com/originals/e5/12/84/e51284eedbc2df14ac00cef66f6604d1.gif", "https://i.pinimg.com/originals/6e/8d/98/6e8d98db51b7bac3497b8ce0f58eb4cf.gif", "https://c.tenor.com/lcUIc0XdCHQAAAAd/triste-anime.gif", "https://pa1.narvii.com/6355/a4911089a1b58edf2f5708b8351f091342e5145d_hq.gif"]
   const respuesta = respuestas[Math.floor(Math.random() * respuestas.length)]
+  let usuario = message.member;
   const embed = new Discord.MessageEmbed()
-  .setTitle("8ball")
-  .addField("Pregunta", pregunta)
-  .addField("Respuesta", respuesta)
-  .setTimestamp()
+  .setDescription(`**${usuario.user.username}** esta llorando 7-7`)
+  .setImage(respuesta)
   .setColor("RANDOM")
+
+
   message.channel.send(embed)
 }
+
+
 
 if(command === "avatar"){
   let usuario = message.mentions.members.first() || message.member;
@@ -86,6 +89,55 @@ if(command === "avatar"){
   .catch(error => {
     message.channel.send(`Ocurrio un error: ${error}`)
   })
+}
+
+  if(command === "pat"){
+  const pregunta = args.join(" ")
+  const respuestas = ["https://i.pinimg.com/originals/7b/4e/27/7b4e27392baf0fc817223e6bcffc9818.gif", "https://pa1.narvii.com/6090/15d695e9effce175c435af89f97566e50595bec9_hq.gif", "https://images.hive.blog/0x0/https://i.pinimg.com/originals/a3/3a/46/a33a46a9e0a0e894f12ba4a6f9e4c7b0.gif", "https://i.makeagif.com/media/4-15-2018/jnL1H2.gif", "https://c.tenor.com/Usd3lUQD6uQAAAAC/acaricio-smile.gif", "https://pa1.narvii.com/6049/f014a6e830be6452256aa9ea8a1878c6404cc6f3_hq.gif", "https://c.tenor.com/tnzt38CHIuoAAAAC/pat-acariciar.gif", "https://photos1.iorbix.com/00/00/00/00/03/94/41/33/Esdeath-Reina-de-Hielo-kDpPxw83r-b.gif", "https://pa1.narvii.com/6648/cfc63d882f57d490335041279a0c79359e274b70_hq.gif"]
+  const respuesta = respuestas[Math.floor(Math.random() * respuestas.length)]
+  let usuario = message.member;
+  let member = message.mentions.members.first()
+  if(member.id === message.author.id) return message.channel.send(`No te puedes acariciar a ti mismo`)
+  if(member.id === client.user.id) return message.channel.send(`No me puedes acariciar`)
+  if(!member) return message.channel.send(`Debes mencionar a alguien para acariciar`)
+  const embed = new Discord.MessageEmbed()
+  .setDescription(`**${usuario.user.username}** acarició a **${member.user.username}** uwu`)
+  .setImage(respuesta)
+  .setColor("RANDOM")
+
+
+  message.channel.send(embed)
+}
+
+  if(command === "happy"){
+  const pregunta = args.join(" ")
+  const respuestas = ["https://c.tenor.com/VFA8oAnd1xYAAAAC/zodiaco-anime.gif", "https://i.pinimg.com/originals/38/4f/90/384f90adb2173061f49b225e4c95353e.gif", "https://data.whicdn.com/images/236713063/original.gif", "https://c.tenor.com/1T4QZyApse0AAAAC/sugoi-kawaii.gif", "https://d29nucfiy6mx2f.cloudfront.net/244/ce7dd/c789/48d0/b413/36bbeae0a9d2/animated/311897.gif", "https://media1.giphy.com/media/aqOUrkDo2fdyE/source.gif"]
+  const respuesta = respuestas[Math.floor(Math.random() * respuestas.length)]
+  let usuario = message.member;
+  const embed = new Discord.MessageEmbed()
+  .setDescription(`**${usuario.user.username}** esta feliz :D`)
+  .setImage(respuesta)
+  .setColor("RANDOM")
+
+
+  message.channel.send(embed)
+}
+
+  if(command === "hug"){
+  const pregunta = args.join(" ")
+  const respuestas = ["https://i.pinimg.com/originals/42/92/2e/42922e87b3ec288b11f59ba7f3cc6393.gif", "https://i.pinimg.com/originals/b5/1d/f1/b51df18c3a0ebe6ddff723cf3103e174.gif", "https://c.tenor.com/ncblDAj_2FwAAAAC/abrazo-hug.gif", "https://i.pinimg.com/originals/b6/cc/7d/b6cc7d41671f2b80d37f763409c78fd6.gif", "https://64.media.tumblr.com/826a784897bf75177d3369d5f2a026ea/tumblr_mzui9iywOG1t8690mo1_500.gifv", "https://pa1.narvii.com/6054/e11eef98b053e70d1404a12a085e8c6220917069_hq.gif"]
+  const respuesta = respuestas[Math.floor(Math.random() * respuestas.length)]
+  let usuario = message.member;
+  let member = message.mentions.members.first()
+  if(member.id === message.author.id) return message.channel.send(`No te puedes abrazar a ti mismo >.<`)
+  if(member.id === client.user.id) return message.channel.send(`No me puedes abrazar >.<`)
+  if(!member) return message.channel.send(`Debes mencionar a alguien para abrazarlo >.<`)
+  const embed = new Discord.MessageEmbed()
+  .setDescription(`**${usuario.user.username}** le ha dado un abrazo a **${member.user.username}** uwu`)
+  .setImage(respuesta)
+  .setColor("RANDOM")
+
+  message.channel.send(embed)
 }
 
 if(command === "userinfo"){
@@ -309,7 +361,7 @@ client.on("message", (message) => {
                           .setDescription("Prefijo:  s!")
                           .setColor(0x00FFFF)
                           .addField("Comandos de diversion", "`say` `8ball`")
-                          .addField("Comandos de reaccion", "`hi`")
+                          .addField("Comandos de reaccion", "`hi`" `happy` `cry` `hug` `pat`)
                           .addField("Comandos de moderacion", "`clear` `ban` `kick` `redes`")
                           .addField("Otros", "`avatar` `userinfo` `invite` `help`")
                           .setAuthor("COMANDOS DEL BOT", client.user.avatarURL())
@@ -335,6 +387,67 @@ client.on("message", (message) => {
                   message.channel.send(embed);
                 
         }
+  if (message.content.startsWith("s!h pat")) {
+          const embed = new Discord.MessageEmbed()
+                        .setDescription("Acaricia a un usuario.")
+                        .setColor(0x00FFFF)
+                        .addField("Uso", "`s!pat <usuario>`")
+                        .addField("Ejemplo", "• s!pat @usuario")
+                        .addField("Alias", "pat")
+                        .setAuthor("Reaccion: pat", client.user.avatarURL())
+                        .setThumbnail("https://c.tenor.com/AOOfi8VnUVEAAAAC/anime-ep10.gif")
+                        .setFooter("<> = Obligatorio | [] = Opcional. | No incluyas estos símbolos cuando ejecutes el comando.")
+        
+                  message.channel.send(embed);
+                
+        }
+
+  if (message.content.startsWith("s!h hug")) {
+          const embed = new Discord.MessageEmbed()
+                        .setDescription("Abraza a un usuario.")
+                        .setColor(0x00FFFF)
+                        .addField("Uso", "`s!hug <usuario>`")
+                        .addField("Ejemplo", "• s!hug @usuario")
+                        .addField("Alias", "hug")
+                        .setAuthor("Reaccion: hug", client.user.avatarURL())
+                        .setThumbnail("https://acegif.com/wp-content/gif/anime-hug-12.gif")
+                        .setFooter("<> = Obligatorio | [] = Opcional. | No incluyas estos símbolos cuando ejecutes el comando.")
+        
+                  message.channel.send(embed);
+                
+        }
+
+  if (message.content.startsWith("s!h cry")) {
+          const embed = new Discord.MessageEmbed()
+                        .setDescription("Hazle saber a todos que estas triste.")
+                        .setColor(0x00FFFF)
+                        .addField("Uso", "`s!cry`")
+                        .addField("Ejemplo", "• s!cry")
+                        .addField("Alias", "cry")
+                        .setAuthor("Reaccion: cry", client.user.avatarURL())
+                        .setThumbnail("https://i.pinimg.com/originals/29/af/aa/29afaa9f46f44d2eccf69a981b70fefe.gif")
+                        .setFooter("<> = Obligatorio | [] = Opcional. | No incluyas estos símbolos cuando ejecutes el comando.")
+        
+                  message.channel.send(embed);
+                
+        }
+
+   if (message.content.startsWith("s!h happy")) {
+          const embed = new Discord.MessageEmbed()
+                        .setDescription("Hazle saber a todos que estas feliz..")
+                        .setColor(0x00FFFF)
+                        .addField("Uso", "`s!happy`")
+                        .addField("Ejemplo", "• s!happy")
+                        .addField("Alias", "happy")
+                        .setAuthor("Reaccion: happy", client.user.avatarURL())
+                        .setThumbnail("https://c.tenor.com/EgEqkUelPeQAAAAC/anime-blush-anime-feliz.gif")
+                        .setFooter("<> = Obligatorio | [] = Opcional. | No incluyas estos símbolos cuando ejecutes el comando.")
+        
+                  message.channel.send(embed);
+                
+        }
+
+  
          if (message.content.startsWith("s!h say")) {
           const embed = new Discord.MessageEmbed()
                         .setDescription("El bot repetira lo que digas.")
