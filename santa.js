@@ -63,18 +63,7 @@ if(command === "hi"){
   message.channel.send(embed)
 }
 
-if(command === "8ball"){
-  const pregunta = args.join(" ")
-  const respuestas = ["si", "no", "tal ves", "quizas", "en absoluto", "probablemente", "nose", "probablemente... NO", "negativo", "callate", "ni me lo menciones", "definitivamente", "Preguntale a Santa"]
-  const respuesta = respuestas[Math.floor(Math.random() * respuestas.length)]
-  const embed = new Discord.MessageEmbed()
-  .setTitle("8ball")
-  .addField("Pregunta", pregunta)
-  .addField("Respuesta", respuesta)
-  .setTimestamp()
-  .setColor("RANDOM")
-  message.channel.send(embed)
-}
+
 
 if(command === "avatar"){
   let usuario = message.mentions.members.first() || message.member;
@@ -479,6 +468,23 @@ client.on("message", (message) => {
 message.channel.send(embed);
 
         }
+
+if (message.content.startsWith("s! 8ball")){
+  const pregunta = args.join(" ")
+  const respuestas = ["si", "no", "tal ves", "quizas", "en absoluto", "probablemente", "nose", "probablemente... NO", "negativo", "callate", "ni me lo menciones", "definitivamente", "Preguntale a Santa"]
+  const respuesta = respuestas[Math.floor(Math.random() * respuestas.length)]
+  const embed = new Discord.MessageEmbed()
+  .setTitle("8ball")
+  .addField("Pregunta", pregunta)
+  .addField("Respuesta", respuesta)
+  .setTimestamp()
+  .setColor("RANDOM")
+  message.channel.send(embed)
+}
+
+
+
+
 
 //////////// OTROS ////////////
         if (message.content.startsWith("s!invite")) {
