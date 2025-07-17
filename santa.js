@@ -361,7 +361,7 @@ client.on("message", (message) => {
                           .setDescription("Prefijo:  s!")
                           .setColor(0x00FFFF)
                           .addField("Comandos de diversion", "`say` `8ball`")
-                          .addField("Comandos de reaccion", "`hi`" `happy` `cry` `hug` `pat`)
+                          .addField("Comandos de reaccion", "`hi` `happy` `cry` `hug` `pat`")
                           .addField("Comandos de moderacion", "`clear` `ban` `kick` `redes`")
                           .addField("Otros", "`avatar` `userinfo` `invite` `help`")
                           .setAuthor("COMANDOS DEL BOT", client.user.avatarURL())
